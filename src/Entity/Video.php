@@ -28,6 +28,9 @@ class Video
     #[ORM\Column(type: Types::TEXT)]
     private ?string $url = null;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $thumbnail = null;
+
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
@@ -91,6 +94,18 @@ class Video
     public function setUrl(string $url): static
     {
         $this->url = $url;
+
+        return $this;
+    }
+
+    public function getThumbnail(): ?string
+    {
+        return $this->thumbnail;
+    }
+
+    public function setThumbnail(string $thumbnail): static
+    {
+        $this->thumbnail = $thumbnail;
 
         return $this;
     }
